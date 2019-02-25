@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/Colors.material" type="Material" id=2]
@@ -7,8 +7,9 @@
 [ext_resource path="res://assets/GunMaterial.material" type="Material" id=5]
 [ext_resource path="res://assets/MuzzleFlash.material" type="Material" id=6]
 [ext_resource path="res://assets/Gun_Emission.material" type="Material" id=7]
-[ext_resource path="res://assets/32-32_white.png" type="Texture" id=8]
-[ext_resource path="res://assets/Titillium-Regular.otf" type="DynamicFontData" id=9]
+[ext_resource path="res://AnimationPlayer_Manager.gd" type="Script" id=8]
+[ext_resource path="res://assets/32-32_white.png" type="Texture" id=9]
+[ext_resource path="res://assets/Titillium-Regular.otf" type="DynamicFontData" id=10]
 
 [sub_resource type="CapsuleShape" id=1]
 
@@ -4071,10 +4072,10 @@ _sections_unfolded = [ "Border Width" ]
 size = 42
 use_mipmaps = false
 use_filter = true
-font_data = ExtResource( 9 )
+font_data = ExtResource( 10 )
 _sections_unfolded = [ "Extra Spacing", "Settings" ]
 
-[node name="Player" type="KinematicBody"]
+[node name="Player" type="KinematicBody" index="0"]
 
 input_ray_pickable = true
 input_capture_on_drag = false
@@ -4331,6 +4332,7 @@ anims/Rifle_idle = SubResource( 19 )
 anims/Rifle_reload = SubResource( 20 )
 anims/Rifle_unequip = SubResource( 21 )
 blend_times = [  ]
+script = ExtResource( 8 )
 
 [node name="Camera" type="Camera" parent="Rotation_Helper" index="1"]
 
@@ -4343,7 +4345,7 @@ v_offset = 0.0
 doppler_tracking = 0
 projection = 0
 current = true
-fov = 90.0
+fov = 70.0
 size = 1.0
 near = 0.05
 far = 180.0
@@ -4511,7 +4513,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 8 )
+texture = ExtResource( 9 )
 expand = true
 stretch_mode = 0
 _sections_unfolded = [ "Rect", "Visibility" ]
@@ -4532,7 +4534,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 8 )
+texture = ExtResource( 9 )
 expand = true
 stretch_mode = 0
 _sections_unfolded = [ "Rect" ]
@@ -4554,7 +4556,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 8 )
+texture = ExtResource( 9 )
 expand = true
 stretch_mode = 0
 _sections_unfolded = [ "Rect" ]
@@ -4576,7 +4578,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 8 )
+texture = ExtResource( 9 )
 expand = true
 stretch_mode = 0
 _sections_unfolded = [ "Rect" ]

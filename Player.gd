@@ -5,6 +5,11 @@ var vel = Vector3()
 const MAX_SPEED = 20
 const JUMP_SPEED = 18
 const ACCEL = 4.5
+const MAX_SPRINT_SPEED = 30
+const SPRINT_ACCEL = 18
+var is_sprinting = false
+
+var flashlight
 
 var dir = Vector3()
 
@@ -19,6 +24,7 @@ var MOUSE_SENSITIVITY = 0.07
 func _ready():
 	camera = $Rotation_Helper/Camera
 	rotation_helper = $Rotation_Helper
+	flashlight = $Rotation_Helper/Flashlight
 	
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
@@ -57,6 +63,22 @@ func process_input(delta):
 	# ---------------
 	
 	# ---------------
+	# Sprintinig
+	if Input.is_action_pressed("movement_sprint"):
+		is_sprinting = true
+	else:
+		is_sprinting = false
+	# ---------------
+	
+	# ---------------
+	# Flashlight toggle
+	if Input.is_action_just_pressed("flashlight"):
+		if flashlight.is_visible_in_tree():
+			flashlight.hide()
+		else:
+			flashlight.show()
+	
+	# ---------------
 	# Capture and free the camera
 	if Input.is_action_pressed("ui_cancel"):
 		if Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
@@ -75,11 +97,17 @@ func process_movement(delta):
 	hvel.y = 0
 	
 	var target = dir
-	target *= MAX_SPEED
+	if is_sprinting:
+		target *= MAX_SPRINT_SPEED
+	else:
+		target *= MAX_SPEED
 	
 	var accel
 	if dir.dot(hvel) > 0:
-		accel = ACCEL
+		if is_sprinting:
+			accel = SPRINT_ACCEL
+		else:
+			accel = ACCEL
 	else:
 		accel = DEACCEL
 	

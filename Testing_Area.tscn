@@ -344,8 +344,6 @@ _sections_unfolded = [ "Albedo" ]
 
 [node name="Box" type="Spatial" parent="." index="0"]
 
-editor/display_folded = true
-
 [node name="Floor_plane" type="MeshInstance" parent="Box" index="0"]
 
 editor/display_folded = true
@@ -551,7 +549,6 @@ disabled = false
 
 [node name="OmniLight" type="OmniLight" parent="Box" index="6"]
 
-editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 42.005, 0 )
 layers = 1
 light_color = Color( 1, 1, 1, 1 )
@@ -753,8 +750,7 @@ _sections_unfolded = [ "material" ]
 
 [node name="PurpleCube4" type="RigidBody" parent="Cubes" index="3"]
 
-editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.85143, 17.1576, 23.1277 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.85143, 20.6143, 23.1277 )
 input_ray_pickable = true
 input_capture_on_drag = false
 collision_layer = 1
@@ -804,8 +800,7 @@ _sections_unfolded = [ "material" ]
 
 [node name="PurpleCube5" type="RigidBody" parent="Cubes" index="4"]
 
-editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.85143, 24.1593, 23.1277 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.85143, 30.1764, 23.1277 )
 input_ray_pickable = true
 input_capture_on_drag = false
 collision_layer = 1
@@ -1059,7 +1054,6 @@ _sections_unfolded = [ "material" ]
 
 [node name="GreenCube4" type="RigidBody" parent="Cubes" index="9"]
 
-editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.79556, 17.3734, -21.6551 )
 input_ray_pickable = true
 input_capture_on_drag = false
@@ -1094,6 +1088,7 @@ disabled = false
 
 [node name="MeshInstance" type="MeshInstance" parent="Cubes/GreenCube4" index="1"]
 
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.275045, 0 )
 layers = 1
 material_override = null
 cast_shadow = 1
@@ -1162,7 +1157,7 @@ _sections_unfolded = [ "material" ]
 [node name="GreenCube6" type="RigidBody" parent="Cubes" index="11"]
 
 editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.602769, 24.9266, -21.6551 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.602769, 9.89145, -13.848 )
 input_ray_pickable = true
 input_capture_on_drag = false
 collision_layer = 1
