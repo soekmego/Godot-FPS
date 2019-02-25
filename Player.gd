@@ -14,7 +14,7 @@ const MAX_SLOPE_ANGLE = 40
 var camera
 var rotation_helper
 
-var MOUSE_SENSITIVITY = 0.05
+var MOUSE_SENSITIVITY = 0.07
 
 func _ready():
 	camera = $Rotation_Helper/Camera
@@ -47,7 +47,7 @@ func process_input(delta):
 	
 	dir += -cam_xform.basis.z.normalized() * input_movement_vector.y
 	dir += cam_xform.basis.x.normalized() * input_movement_vector.x
-	# --------------
+	# ---------------
 	
 	# ---------------
 	# Jumping
@@ -58,7 +58,7 @@ func process_input(delta):
 	
 	# ---------------
 	# Capture and free the camera
-	if Input.action_press("ui_cancel"):
+	if Input.is_action_pressed("ui_cancel"):
 		if Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		else:

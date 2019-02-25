@@ -597,8 +597,6 @@ environment = SubResource( 7 )
 
 [node name="Cubes" type="Spatial" parent="." index="3"]
 
-editor/display_folded = true
-
 [node name="PurpleCube" type="RigidBody" parent="Cubes" index="0"]
 
 editor/display_folded = true
