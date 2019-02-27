@@ -596,7 +596,6 @@ environment = SubResource( 7 )
 
 [node name="PurpleCube" type="RigidBody" parent="Cubes" index="0"]
 
-editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.95316, 23.1277 )
 input_ray_pickable = true
 input_capture_on_drag = false
