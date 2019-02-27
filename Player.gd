@@ -21,6 +21,19 @@ var rotation_helper
 
 var MOUSE_SENSITIVITY = 0.07
 
+var animation_manager
+
+var current_weapon_name = "UNARMED"
+var weapons = {"UNARMED":null, "KNIFE":null, "PISTOL":null, "RIFLE":null}
+const WEAPON_NUMBER_TO_NAME = {0:"UNARMED", 1:"KNIFE", 2:"PISTOL", 3:"RIFLE"}
+const WEAPON_NAME_TO_NUMBER = {"UNARMED":0, "KNIFE":1, "PISTOL":2, "RIFLE":3}
+var changing_weapon = false
+var changing_weapon_name = "UNARMED"
+
+var health = 100
+
+var UI_status_label
+
 func _ready():
 	camera = $Rotation_Helper/Camera
 	rotation_helper = $Rotation_Helper

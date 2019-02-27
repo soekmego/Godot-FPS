@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/Colors.material" type="Material" id=2]
@@ -9,9 +9,10 @@
 [ext_resource path="res://assets/Gun_Emission.material" type="Material" id=7]
 [ext_resource path="res://AnimationPlayer_Manager.gd" type="Script" id=8]
 [ext_resource path="res://Weapon_rifle.gd" type="Script" id=9]
-[ext_resource path="res://Weapon_pistol.gd" type="Script" id=10]
-[ext_resource path="res://assets/32-32_white.png" type="Texture" id=11]
-[ext_resource path="res://assets/Titillium-Regular.otf" type="DynamicFontData" id=12]
+[ext_resource path="res://Weapon_knife.gd" type="Script" id=10]
+[ext_resource path="res://Weapon_pistol.gd" type="Script" id=11]
+[ext_resource path="res://assets/32-32_white.png" type="Texture" id=12]
+[ext_resource path="res://assets/Titillium-Regular.otf" type="DynamicFontData" id=13]
 
 [sub_resource type="CapsuleShape" id=1]
 
@@ -4116,7 +4117,7 @@ _sections_unfolded = [ "Border Width" ]
 size = 42
 use_mipmaps = false
 use_filter = true
-font_data = ExtResource( 12 )
+font_data = ExtResource( 13 )
 _sections_unfolded = [ "Extra Spacing", "Settings" ]
 
 [node name="Player" type="KinematicBody" index="0"]
@@ -4416,6 +4417,7 @@ collision_mask = 1
 [node name="Knife_Point" type="Spatial" parent="Rotation_Helper/Gun_Fire_Points" index="1"]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.163315, 10.4607, 2.54082 )
+script = ExtResource( 10 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Area" type="Area" parent="Rotation_Helper/Gun_Fire_Points/Knife_Point" index="0"]
@@ -4452,7 +4454,7 @@ disabled = false
 [node name="Pistol_Point" type="Spatial" parent="Rotation_Helper/Gun_Fire_Points" index="2"]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.436506, 11.3604, 4.77607 )
-script = ExtResource( 10 )
+script = ExtResource( 11 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Gun_Aim_Point" type="Spatial" parent="Rotation_Helper" index="3"]
@@ -4555,7 +4557,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 11 )
+texture = ExtResource( 12 )
 expand = true
 stretch_mode = 0
 _sections_unfolded = [ "Rect", "Visibility" ]
@@ -4576,7 +4578,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 11 )
+texture = ExtResource( 12 )
 expand = true
 stretch_mode = 0
 _sections_unfolded = [ "Rect" ]
@@ -4598,7 +4600,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 11 )
+texture = ExtResource( 12 )
 expand = true
 stretch_mode = 0
 _sections_unfolded = [ "Rect" ]
@@ -4620,7 +4622,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 11 )
+texture = ExtResource( 12 )
 expand = true
 stretch_mode = 0
 _sections_unfolded = [ "Rect" ]
